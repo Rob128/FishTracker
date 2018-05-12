@@ -8,10 +8,16 @@ package com.rob128.fishtracker.main;
 public interface MainContract {
 
     interface MvpView {
+        // Show Views
+        void showSignInScreen();
 
+        void showSignUpScreen();
     }
 
     interface Presenter {
+        // Actions
+        void handleSignInButtonClick();
 
+        void handleSignUpButtonClick();
     }
 }
