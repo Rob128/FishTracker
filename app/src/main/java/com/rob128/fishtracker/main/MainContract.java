@@ -1,5 +1,7 @@
 package com.rob128.fishtracker.main;
 
+import android.view.View;
+
 /**
  * Created by Robert on 12.05.2018
  * Defines a contract between the view {@link MainActivity},
@@ -16,8 +18,8 @@ public interface MainContract {
 
     interface Presenter {
         // Actions
-        void handleSignInButtonClick();
+        void handleSignInButtonClick(View view);
 
-        void handleSignUpButtonClick();
+        void handleSignUpButtonClick(View view);
     }
 }

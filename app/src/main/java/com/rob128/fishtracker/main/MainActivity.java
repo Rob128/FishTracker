@@ -1,10 +1,12 @@
 package com.rob128.fishtracker.main;
 
+import android.databinding.DataBindingUtil;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
 
 import com.rob128.fishtracker.R;
+import com.rob128.fishtracker.databinding.MainActivityBinding;
 
 /**
  * Displays the main screen, when the app loads.
@@ -17,9 +19,13 @@ public class MainActivity extends AppCompatActivity implements MainContract.MvpV
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main_activity);
 
+        // Create the data binding with the layout file.
+        MainActivityBinding binding = DataBindingUtil.setContentView(this, R.layout.main_activity);
+
+        // Create the presenter and bind it.
         mPresenter = new MainPresenter(this);
+        binding.setPresenter(mPresenter);
     }
 
     //// MVP-View methods
